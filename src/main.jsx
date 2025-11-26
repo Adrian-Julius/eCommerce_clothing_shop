@@ -23,11 +23,11 @@ const myRouter = createBrowserRouter(
       errorElement: <Error />,
       children: [
         { index: true, element: <Home /> }, //index: true     // render renders when the parent path matches exactly
-        { path: "/about", element: <About /> },
-        { path: "/products", element: <Products /> },
-        { path: "/products/:id", element: <Products /> },
-        { path: "/contact", element: <Contact /> },
-        { path: "/cart", element: <Cart /> },
+        { path: "about", element: <About /> },
+        { path: "products", element: <Products /> },
+        { path: "products/:id", element: <Products /> },
+        { path: "contact", element: <Contact /> },
+        { path: "cart", element: <Cart /> },
       ],
     },
 
