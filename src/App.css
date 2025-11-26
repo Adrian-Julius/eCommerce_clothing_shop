@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body::-webkit-scrollbar {
+  display: none;
+  scrollbar-width: 0;
+}
+
+/* App.jsx */
+.container {
+  background: radial-gradient(
+    circle,
+    rgb(255, 252, 249) 0%,
+    rgb(255, 245, 230) 100%
+  );
+}
+
+/* NAV-LINK STYLING */
+a.active {
+  background-color: #ea580c;
+  color: white;
+}
+
+/* PRODUCTS ANIMATION */
+@keyframes appear {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.2);
+  }
+
+  30% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ANIMATION WHEN SCROLLING */
+.itemContainer {
+  animation: appear 1 ease-in-out;
+  animation-timeline: view();
+}
+
+/* sizes */
+
+/* HOME.JSX */
+/* left and right containers */
+.leftContainer {
+  background: url("/public/Images/left-BG.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.rightContainer {
+  background: url("/public/Images/right-BG.png") no-repeat center center;
+  background-size: contain;
+}
+
+/* MEDIA STYLING FOR 450px below */
+@media (max-width: 450px) {
+  .rightContainer h1 {
+    font-size: 2.3rem;
+  }
+
+  .homeContainer .itemContainer,
+  .productContainer .itemContainer {
+    min-width: 300px;
+  }
+
+  /* PRODUCTS.JSX */
+  .pagination {
+    ul {
+      gap: 10px;
+      font-size: 20px;
+    }
+
+    a {
+      padding: 10px 15px;
+    }
+  }
+}
+
+/* ERROR COMPONENT PAGE */
+
+/* PRODUCTS CONTAINER HOVER */
+.itemContainer:hover button {
+  transform: scale(1.1);
+  transition: all 0.1s linear;
+}
