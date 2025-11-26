@@ -15,23 +15,29 @@ import Signup from "./components/Signup.jsx";
 
 import Error from "./components/Error.jsx";
 
-const myRouter = createBrowserRouter([
+const myRouter = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+      errorElement: <Error />,
+      children: [
+        { index: true, element: <Home /> }, //index: true     // render renders when the parent path matches exactly
+        { path: "/about", element: <About /> },
+        { path: "/products", element: <Products /> },
+        { path: "/products/:id", element: <Products /> },
+        { path: "/contact", element: <Contact /> },
+        { path: "/cart", element: <Cart /> },
+      ],
+    },
+
+    { path: "/login", element: <Login /> },
+    { path: "/signup", element: <Signup /> },
+  ],
   {
-    path: "/",
-    element: <App />,
-    errorElement: <Error />,
-    children: [
-      { index: true, element: <Home /> }, //index: true     // render renders when the parent path matches exactly
-      { path: "/about", element: <About /> },
-      { path: "/products", element: <Products /> },
-      { path: "/products/:id", element: <Products /> },
-      { path: "/contact", element: <Contact /> },
-      { path: "/cart", element: <Cart /> },
-    ],
-  },
-  { path: "/login", element: <Login /> },
-  { path: "/signup", element: <Signup /> },
-]);
+    basename: "/eCommerce_clothing_shop/", // <-- set basename here
+  }
+);
 
 createRoot(document.getElementById("root")).render(
   <CartContext>
