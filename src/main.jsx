@@ -35,7 +35,7 @@ const myRouter = createBrowserRouter(
     { path: "/signup", element: <Signup /> },
   ],
   {
-    basename: "/eCommerce_clothing_shop/", // <-- set basename here
+    basename: "/eCommerce_clothing_shop", // <-- set basename here
   }
 );
 
